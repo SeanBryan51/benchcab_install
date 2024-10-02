@@ -45,7 +45,7 @@ def benchcab_install():
                 model_config["prefix_path_command"], template_mapping
             )
             prefix_path = subprocess.check_output(
-                prefix_path_command, shell=True
+                prefix_path_command, shell=True, text=True
             )
         print(f"prefix_path: {prefix_path}")
 

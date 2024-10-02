@@ -12,6 +12,6 @@ models:
 - model: cable
   version: gcc_compilation_and_warnings
   install_command: |
-    spack install cable@git.gcc_compilation_and_warnings~mpi
+    spack install cable@git.gcc_compilation_and_warnings%intel~mpi^netcdf-fortran@4.6.0
   prefix_path_command: |
-    spack find --format "{prefix}" cable@git.gcc_compilation_and_warnings
+    spack find --format "{prefix}/bin" cable@git.gcc_compilation_and_warnings%intel~mpi^netcdf-fortran@4.6.0
