@@ -18,7 +18,7 @@ def fetch_repo(spec):
         ref = spec["git"].get("ref")
         if ref:
             time.sleep(0.01)
-            subprocess.run(f"cd {src_path} && git reset --hard {ref}", shell=True, check=True)
+            subprocess.run(f"cd {src_path} && git checkout {ref}", shell=True, check=True)
     return src_path
 
 def benchcab_install():
