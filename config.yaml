@@ -1,0 +1,17 @@
+models:
+- model: cable
+  version: main
+  fetch_from:
+    git:
+      url: https://github.com/CABLE-LSM/CABLE
+      ref: main
+  install_command: |
+    cd ${MODEL_SOURCE}
+    ./build.bash
+  prefix_path: ${MODEL_SOURCE}/bin
+- model: cable
+  version: gcc_compilation_and_warnings
+  install_command: |
+    spack install cable@git.gcc_compilation_and_warnings~mpi
+  prefix_path_command: |
+    spack find --format "{prefix}" cable@git.gcc_compilation_and_warnings
